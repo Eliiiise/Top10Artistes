@@ -1,0 +1,25 @@
+.select-nav {
+    position: absolute;
+    background-color: $middle-blue;
+    height: 40px;
+    width: 0px;
+    right: calc( -150px / 2 );
+    top: -12px;
+    z-index: -10;
+    transition: all 0s;
+
+    span {
+        width: 0px;
+        height: 100%;
+        border-radius: 1px;
+        box-shadow: $shadow;
+        background-color: $red;
+        display: block;
+    }
+}
+
+.select-nav-text {
+    color: $red !important;
+    text-shadow: $shadow;
+}
+

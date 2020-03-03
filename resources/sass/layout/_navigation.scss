@@ -1,0 +1,75 @@
+.menu {
+
+    background-color: $blue;
+    height: calc(100vh - 140px);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 70px 0;
+    position: fixed;
+
+    h1 {
+        color: $red;
+        font-weight: $text-black;
+        letter-spacing: $text-space-big;
+        font-size: 25px;
+        text-shadow: $shadow;
+    }
+
+    .artiste {
+        height: 160px;
+    }
+
+    nav {
+        position: relative;
+        margin: 80px 0;
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            letter-spacing: $text-space-middle;
+            height: 110px;
+            width: 150px;
+            li a {
+                color: $grey;
+                font-weight: $text-semi-bold;
+                text-decoration: none;
+                font-size: 14px;
+                transition: all 0.5s;
+                padding: 5px;
+            }
+        }
+    }
+
+    span.choose {
+        background-color: $red;
+        box-shadow: $big-shadow;
+        padding: 10px 30px;
+        color: $white;
+        font-weight: $text-semi-bold;
+        letter-spacing: $text-space-big;
+        font-size: 12px;
+        border-radius: 30px;
+        transition: all 0.5s;
+    }
+
+    span.anchoose {
+        border: 1.5px solid $red;
+        box-shadow: $shadow;
+        padding: 10px 30px;
+        color: $white;
+        font-weight: $text-semi-bold;
+        letter-spacing: $text-space-big;
+        font-size: 12px;
+        border-radius: 30px;
+        transition: all 0.5s;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+}

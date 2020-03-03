@@ -1,0 +1,15 @@
+.info {
+    margin-top: 20px;
+    p {
+        color: $light-blue;
+        font-weight: $text-regular;
+        font-size: 14px;
+        letter-spacing: $text-space-big;
+        margin: 10px 0;
+        opacity: 0.3;
+
+        em{
+            font-weight: $text-semi-bold;
+        }
+    }
+}

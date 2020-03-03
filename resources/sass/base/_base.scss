@@ -1,0 +1,14 @@
+body {
+    font-family: $text-font;
+    position: relative;
+    background-color: $dark-blue;
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.flex {
+    display: flex;
+}

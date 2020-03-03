@@ -1,0 +1,29 @@
+.content {
+    position:absolute;
+    left: 300px;
+    height: 225vh;
+    padding: 1px;
+    overflow-x: hidden;
+    width: 0px;
+
+
+    h3 {
+        color: $white;
+        font-size: 30px;
+        font-weight: $text-black;
+        letter-spacing: $text-space-big;
+    }
+
+    h2 {
+        color: $white;
+        font-size: 50px;
+        font-weight: $text-black;
+        letter-spacing: $text-space-big;
+    }
+}
+
+.fixe {
+    padding: 100px;
+    position: fixed;
+    z-index: -20;
+}

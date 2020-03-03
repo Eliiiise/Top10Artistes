@@ -1,0 +1,452 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font-family: "Titillium Web";
+  position: relative;
+  background-color: #070723;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.transition-fade {
+  transition: 0.4s;
+  opacity: 1;
+}
+
+html.is-animating .transition-fade {
+  opacity: 0;
+}
+
+.menu {
+  background-color: #101834;
+  height: calc(100vh - 140px);
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 70px 0;
+  position: fixed;
+}
+
+.menu h1 {
+  color: #FF4632;
+  font-weight: 900;
+  letter-spacing: 2px;
+  font-size: 25px;
+  text-shadow: 0px 0px 4px #FF4632;
+}
+
+.menu .artiste {
+  height: 160px;
+}
+
+.menu nav {
+  position: relative;
+  margin: 80px 0;
+}
+
+.menu nav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  letter-spacing: 1px;
+  height: 110px;
+  width: 150px;
+}
+
+.menu nav ul li a {
+  color: #4D5579;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.5s;
+  padding: 5px;
+}
+
+.menu span.choose {
+  background-color: #FF4632;
+  box-shadow: 0px 0px 8px #FF4632;
+  padding: 10px 30px;
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-size: 12px;
+  border-radius: 30px;
+  transition: all 0.5s;
+}
+
+.menu span.anchoose {
+  border: 1.5px solid #FF4632;
+  box-shadow: 0px 0px 4px #FF4632;
+  padding: 10px 30px;
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-size: 12px;
+  border-radius: 30px;
+  transition: all 0.5s;
+}
+
+.menu a {
+  text-decoration: none;
+}
+
+.content {
+  position: absolute;
+  left: 300px;
+  height: 225vh;
+  padding: 1px;
+  overflow-x: hidden;
+  width: 0px;
+}
+
+.content h3 {
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.content h2 {
+  color: #ffffff;
+  font-size: 50px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.fixe {
+  padding: 100px;
+  position: fixed;
+  z-index: -20;
+}
+
+.artiste {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.artiste img,
+.artiste div {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: #FF4632;
+  transition: all 0.5s;
+}
+
+.artiste .artiste-name {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #D8DCF2;
+  margin-top: 10px;
+  transition: all 0.5s;
+}
+
+.artiste .artiste-type {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: #C5CDF1;
+  transition: all 0.5s;
+}
+
+.select-nav {
+  position: absolute;
+  background-color: #192043;
+  height: 40px;
+  width: 0px;
+  right: calc( -150px / 2 );
+  top: -12px;
+  z-index: -10;
+  transition: all 0s;
+}
+
+.select-nav span {
+  width: 0px;
+  height: 100%;
+  border-radius: 1px;
+  box-shadow: 0px 0px 4px #FF4632;
+  background-color: #FF4632;
+  display: block;
+}
+
+.select-nav-text {
+  color: #FF4632 !important;
+  text-shadow: 0px 0px 4px #FF4632;
+}
+
+.adv {
+  margin-top: 10vh;
+}
+
+.adv .advancement {
+  display: flex;
+  align-items: center;
+  width: 0;
+}
+
+.adv .advancement span {
+  border: 1px;
+  border-left: 1px solid #C5CDF1;
+  width: 6px;
+  margin: 3px;
+  opacity: 0.3;
+  transition: all 0.5s;
+}
+
+.adv .advancement span.adv-cliked {
+  border-left: 1px solid #FF4632 !important;
+  opacity: 1;
+  box-shadow: 0px 0px 4px #FF4632;
+}
+
+.adv div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.adv div p {
+  color: #C5CDF1;
+  opacity: 0.3;
+  margin-left: 192px;
+  margin-bottom: 10px;
+  transition: all 0.5s;
+}
+
+.adv div p:nth-of-type(1) {
+  margin-left: 65px;
+}
+
+.adv div .adv-nb-active {
+  color: #FF4632;
+  text-shadow: 0px 0px 4px #FF4632;
+  opacity: 1;
+}
+
+.info {
+  margin-top: 20px;
+}
+
+.info p {
+  color: #C5CDF1;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin: 10px 0;
+  opacity: 0.3;
+}
+
+.info p em {
+  font-weight: 600;
+}
+
+.artistes {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  margin-right: -64px;
+}
+
+.artistes .artiste {
+  height: 200px;
+}
+
+.artistes .artiste img,
+.artistes .artiste div {
+  width: 140px;
+  height: 140px;
+}
+
+.artistes .artiste .artiste-img-active {
+  opacity: 0.5;
+}
+
+.artistes .artiste .artiste-div-active {
+  box-shadow: 0px 0px 8px #FF4632;
+}
+
+.artistes .artiste-nb-active p {
+  color: #FF4632;
+  text-shadow: 0px 0px 4px #FF4632;
+}
+
+.consigne {
+  display: flex;
+  align-items: center;
+  margin-left: 15%;
+  margin-bottom: 20px;
+}
+
+.consigne span {
+  border: 1px;
+  border-left: 1px solid #FF4632 !important;
+  box-shadow: 0px 0px 4px #FF4632;
+  width: 0px;
+  height: 80px;
+  margin: 3px;
+}
+
+.consigne p:nth-of-type(1) {
+  color: #FF4632;
+  text-shadow: 0px 0px 4px #FF4632;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin: 10px 20px;
+}
+
+.consigne p:nth-of-type(2) {
+  color: #C5CDF1;
+  font-size: 14px;
+  opacity: 0.3;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin: 10px 20px;
+}
+

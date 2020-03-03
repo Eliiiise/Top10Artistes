@@ -1,0 +1,32 @@
+.artiste {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    img, div {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        background-color: $red;
+        transition: all 0.5s;
+    }
+
+    .artiste-name {
+        font-size: 20px;
+        font-weight: $text-semi-bold;
+        letter-spacing: $text-space-big;
+        color: $light-light-blue;
+        margin-top: 10px;
+        transition: all 0.5s;
+    }
+
+    .artiste-type {
+        font-size: 12px;
+        font-weight: $text-regular;
+        letter-spacing: $text-space-big;
+        color: $light-blue;
+        transition: all 0.5s;
+    }
+}

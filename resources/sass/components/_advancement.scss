@@ -1,0 +1,46 @@
+.adv {
+    margin-top: 10vh;
+
+    .advancement {
+        display: flex;
+        align-items: center;
+        width: 0;
+
+        span {
+            border: 1px;
+            border-left: 1px solid $light-blue;
+            width: 6px;
+            margin: 3px;
+            opacity: 0.3;
+            transition: all 0.5s;
+        }
+
+        span.adv-cliked {
+            border-left: 1px solid $red !important;
+            opacity: 1;
+            box-shadow: $shadow;
+        }
+    }
+    div {
+        display: flex;
+        justify-content: space-between;
+
+        p {
+            color: $light-blue;
+            opacity: 0.3;
+            margin-left: 192px;
+            margin-bottom: 10px;
+            transition: all 0.5s;
+        }
+        p:nth-of-type(1) {
+            margin-left: 65px;
+        }
+        .adv-nb-active {
+            color: $red;
+            text-shadow: $shadow;
+            opacity: 1;
+        }
+    }
+}
+
+
