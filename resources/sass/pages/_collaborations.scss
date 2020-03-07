@@ -1,0 +1,19 @@
+.collaborations {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: calc( 100% + 40px );
+    margin-left: -20px;
+
+    .artiste {
+        padding: 50px 20px;
+        height: 210px;
+
+        img, div {
+            width: 150px;
+            height: 150px;
+            background-color: rgba(0,0,0,0);
+        }
+    }
+}

@@ -2,9 +2,14 @@
 
     margin-top: 50px;
     display: flex;
+    justify-content: space-between;
 
     .album:nth-of-type(1) {
-        margin-left: 0 !important;
+        margin-left: 0;
+    }
+
+    .album:last-of-type {
+        padding-right: 100px;
     }
 
     .album {
@@ -13,14 +18,9 @@
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        height: 250px;
-        margin-left: 35px;
+        height: 320px;
         text-align: center;
-
-        img {
-            height: 180px;
-            width: 180px;
-        }
+        margin-left: 50px;
 
         .album-title {
             font-size: 18px;
@@ -39,4 +39,25 @@
             transition: all 0.5s;
         }
     }
+}
+
+.wrapper-albums {
+    display: flex;
+    flex-direction: row;
+    transform: rotate(90deg) translateY(-60vh);
+    transform-origin: top left;
+    display: flex;
+    flex-direction: column;
+    padding: 0 100px;
+
+}
+
+.outer-wrapper-albums {
+    width: 100vw;
+    height: calc(100vw - 300px);
+    transform: rotate(-90deg) translate(-61vh, -100px);
+    transform-origin: top left;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: absolute;
 }

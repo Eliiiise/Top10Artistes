@@ -21,9 +21,7 @@ Route::get('/', 'Top10Controller@guetTop10');
 
 Route::get('/albums', 'AlbumsController@guetAlbums');
 
-Route::get('/collaborations', function () {
-    return view('/collaborations');
-});
+Route::get('/collaborations', 'collaborationsController@guetCollaborations');
 
 Route::get('/communaute', function () {
     return view('/communaute');

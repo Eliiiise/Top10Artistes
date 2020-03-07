@@ -1,4 +1,6 @@
 @extends('layout/menu')
 @section('content')
-<h3>COMMUNAUTE</h3>
+<section class="wrap-page">
+    <h3>COMMUNAUTE</h3>
+</section>
 @endsection

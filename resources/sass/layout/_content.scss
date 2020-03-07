@@ -43,11 +43,15 @@
     position: absolute;
 }
 
-.title-page {
+.wrap-page {
     padding: 100px;
     width: calc(100% - 200px);
 }
 
 .outer-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.content::-webkit-scrollbar {
     display: none;
 }

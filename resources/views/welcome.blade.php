@@ -1,7 +1,7 @@
 @extends('layout/menu')
 @section('content')
 
-    <div class="flex welcome title-page">
+    <div class="flex welcome wrap-page">
         <div>
         <h2>TOP 10 ARTISTES</h2>
             <div class='info'>
