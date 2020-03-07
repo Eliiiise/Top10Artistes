@@ -7,7 +7,7 @@ const swup = new Swup(); // only this line when included with script tag
 import SelectNav from "./components/SelectNav";
 import ChoosePage from "./components/ChoosePage";
 import Advencement from "./components/Advencement";
-import ScrollHorizontal from "./components/ScrollHorizontal";
+//import ScrollHorizontal from "./components/ScrollHorizontal";
 import CreateSpanMusic from "./components/CreateSpanMusic";
 import UpdateMenu from "./components/UpdateMenu";
 
@@ -24,10 +24,8 @@ if (artisteSelect == null) {
 }
 
 document.querySelector('.artiste').style.opacity=0;
-CreateSpanMusic();
 SelectNav();
 ChoosePage();
-ScrollHorizontal();
 Advencement(artisteSelect);
 
 

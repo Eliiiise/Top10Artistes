@@ -34,9 +34,7 @@
             <a href="/"><span class="anchoose">autres artistes</span></a>
         </section>
         <section class="content transition-fade" id="swup">
-        <section class="fixe">
-        @yield('content')
-        </section>
+            @yield('content')
         </section>
         <script src="{{ asset('js/app.js')}}"></script>
     </body>

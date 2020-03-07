@@ -1,4 +1,4 @@
-const max=300;
+
 const ecart=30;
 let selected=1;
 

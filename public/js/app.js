@@ -31289,9 +31289,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_SelectNav__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/SelectNav */ "./resources/js/components/SelectNav.js");
 /* harmony import */ var _components_ChoosePage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/ChoosePage */ "./resources/js/components/ChoosePage.js");
 /* harmony import */ var _components_Advencement__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Advencement */ "./resources/js/components/Advencement.js");
-/* harmony import */ var _components_ScrollHorizontal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/ScrollHorizontal */ "./resources/js/components/ScrollHorizontal.js");
-/* harmony import */ var _components_CreateSpanMusic__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/CreateSpanMusic */ "./resources/js/components/CreateSpanMusic.js");
-/* harmony import */ var _components_UpdateMenu__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/UpdateMenu */ "./resources/js/components/UpdateMenu.js");
+/* harmony import */ var _components_CreateSpanMusic__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/CreateSpanMusic */ "./resources/js/components/CreateSpanMusic.js");
+/* harmony import */ var _components_UpdateMenu__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/UpdateMenu */ "./resources/js/components/UpdateMenu.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
@@ -31300,7 +31299,7 @@ var swup = new swup__WEBPACK_IMPORTED_MODULE_1___default.a(); // only this line 
 
 
 
-
+ //import ScrollHorizontal from "./components/ScrollHorizontal";
 
 
 
@@ -31317,15 +31316,13 @@ if (artisteSelect == null) {
 }
 
 document.querySelector('.artiste').style.opacity = 0;
-Object(_components_CreateSpanMusic__WEBPACK_IMPORTED_MODULE_6__["default"])();
 Object(_components_SelectNav__WEBPACK_IMPORTED_MODULE_2__["default"])();
 Object(_components_ChoosePage__WEBPACK_IMPORTED_MODULE_3__["default"])();
-Object(_components_ScrollHorizontal__WEBPACK_IMPORTED_MODULE_5__["default"])();
 Object(_components_Advencement__WEBPACK_IMPORTED_MODULE_4__["default"])(artisteSelect);
 
 var init = function init() {
   if (document.querySelector(".advancement")) {
-    Object(_components_CreateSpanMusic__WEBPACK_IMPORTED_MODULE_6__["default"])();
+    Object(_components_CreateSpanMusic__WEBPACK_IMPORTED_MODULE_5__["default"])();
     Object(_components_Advencement__WEBPACK_IMPORTED_MODULE_4__["default"])(artisteSelect);
     var artistes = document.querySelectorAll(".artistes .artiste");
     artisteId = document.querySelector(".artistes .artiste:nth-of-type(".concat(artisteSelect, ")")).getAttribute("data-id");
@@ -31336,7 +31333,7 @@ var init = function init() {
       type: 'GET'
     }).done(function (response) {
       console.log("test1");
-      Object(_components_UpdateMenu__WEBPACK_IMPORTED_MODULE_7__["default"])(response);
+      Object(_components_UpdateMenu__WEBPACK_IMPORTED_MODULE_6__["default"])(response);
     });
     artistes.forEach(function (artiste) {
       artiste.addEventListener('click', function (e) {
@@ -31350,7 +31347,7 @@ var init = function init() {
           type: 'GET'
         }).done(function (response) {
           console.log("test1");
-          Object(_components_UpdateMenu__WEBPACK_IMPORTED_MODULE_7__["default"])(response);
+          Object(_components_UpdateMenu__WEBPACK_IMPORTED_MODULE_6__["default"])(response);
         });
       });
     });
@@ -31404,7 +31401,6 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Advencement; });
-var max = 300;
 var ecart = 30;
 var selected = 1;
 function Advencement(nbArtiste) {
@@ -31562,30 +31558,12 @@ function CreateSpanMusic() {
 
     if ((pas - 10) % ecart == 0) {
       alea = 70;
+      console.log(pas);
     }
 
     sp.style.height = "".concat(alea, "px");
     document.querySelector('.advancement').appendChild(sp);
   }
-}
-
-/***/ }),
-
-/***/ "./resources/js/components/ScrollHorizontal.js":
-/*!*****************************************************!*\
-  !*** ./resources/js/components/ScrollHorizontal.js ***!
-  \*****************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ScrollHorizontal; });
-function ScrollHorizontal() {
-  window.addEventListener('scroll', function () {
-    var scroll = -window.scrollY;
-    document.querySelector(".scrollX").style.transform = "translate(".concat(scroll, "px)");
-  });
 }
 
 /***/ }),

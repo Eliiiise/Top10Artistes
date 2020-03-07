@@ -1,7 +1,7 @@
 @extends('layout/menu')
 @section('content')
 
-    <div class="flex welcome">
+    <div class="flex welcome title-page">
         <div>
         <h2>TOP 10 ARTISTES</h2>
             <div class='info'>
@@ -17,22 +17,24 @@
             </div>
         </div>
     </div>
-    <section class="scrollX">
-        <section class="adv">
-            <div class="adv-nb"><p>01</p><p>02</p><p>03</p><p>04</p><p>05</p><p>06</p><p>07</p><p>08</p><p>09</p><p>10</p></div>
-            <div class="advancement">
-            </div>
-        </section>
-        <section class="artistes">
-            @foreach($artistes as $artiste)
-                <div data-id="{{ $artiste->id }}" class="artiste nb{{$artiste->position}}">
-                    <div>
-                    <img src="{{$artiste->picture_medium}}">
-                    </div>
-                    <p class="artiste-name">{{$artiste->name}}</p>
-                    <p class="artiste-type">{{$artiste->type}}</p>
+    <section class="outer-wrapper">
+        <section class="wrapper">
+            <section class="adv">
+                <div class="adv-nb"><p>01</p><p>02</p><p>03</p><p>04</p><p>05</p><p>06</p><p>07</p><p>08</p><p>09</p><p>10</p></div>
+                <div class="advancement">
                 </div>
-            @endforeach
+            </section>
+            <section class="artistes">
+                @foreach($artistes as $artiste)
+                    <div data-id="{{ $artiste->id }}" class="artiste nb{{$artiste->position}}">
+                        <div>
+                        <img src="{{$artiste->picture_medium}}">
+                        </div>
+                        <p class="artiste-name">{{$artiste->name}}</p>
+                        <p class="artiste-type">{{$artiste->type}}</p>
+                    </div>
+                @endforeach
+            </section>
         </section>
     </section>
 

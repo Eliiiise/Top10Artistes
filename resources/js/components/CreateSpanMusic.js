@@ -13,6 +13,7 @@ export default function CreateSpanMusic() {
 
         if ((pas-10)%ecart == 0) {
             alea=70;
+            console.log(pas);
         }
 
         sp.style.height= `${alea}px`;
