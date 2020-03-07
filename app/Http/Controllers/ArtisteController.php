@@ -4,24 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AlbumsController extends Controller
+class ArtisteController extends Controller
 {
-    public function open() {
-        return view('/albums', [
-            'pageOpen' => 'albums'
-        ]);
-    }
+    public function index(Request $request) {
+        $id = $request->input('id');
+        //dd($id);
 
-    public function guetAlbums() {
-
-        $id=$_GET['id'];
 
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_FOLLOWLOCATION, TRUE);
         curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
         curl_setopt_array($curl, array(
-          CURLOPT_URL => "https://api.deezer.com/artist/$id/albums",
+          CURLOPT_URL => 'https://api.deezer.com/artist/'.$id,
           CURLOPT_RETURNTRANSFER => true,
           CURLOPT_ENCODING => "",
           CURLOPT_MAXREDIRS => 10,
@@ -40,11 +35,14 @@ class AlbumsController extends Controller
         if ($err) {
         echo "cURL Error #:" . $err;
         } else {
-        $newResponse=json_decode($response);
-        $albums=$newResponse->{'data'};
-        return view('/albums', [
-                'albums' => $albums
-        ]);
+            //$newResponse = json_decode($response);
+
+            echo($response);
         }
+
+
+        //dd($newResponse);
+
+
     }
 }

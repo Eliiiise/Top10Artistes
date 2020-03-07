@@ -18,15 +18,14 @@
         <section class="menu">
             <h1>DISCOVER</h1>
             <div class="artiste">
-                <div>
-
+                <div class="image-artiste">
                 </div>
-                <p class="artiste-name">Jul</p>
-                <p class="artiste-type">ARTISTE</p>
+                <p class="artiste-name"></p>
+                <p class="artiste-type"></p>
             </div>
             <nav>
               <ul>
-                <li><a href="/albums" class="page1 ">Albums</a></li>
+                <li><a href="/albums" class="page1">Albums</a></li>
                 <li><a href="/collaborations" class="page2">Collaborations</a></li>
                 <li><a href="/communaute" class="page3">Communauté</a></li>
               </ul>

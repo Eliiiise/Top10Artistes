@@ -1,17 +1,17 @@
 const max=300;
 const ecart=30;
-let selected=0;
+let selected=1;
 
 
 export default function Advencement(nbArtiste) {
-    selected = 0;
+    selected = 1;
 
-    setTimeout(colorSpan(10),100);
     document.querySelector(".artistes .artiste:nth-of-type(1)").classList.add("artiste-nb-active");
     document.querySelector(".artistes .artiste:nth-of-type(1) img").classList.add("artiste-img-active");
     document.querySelector(".artistes .artiste:nth-of-type(1) div").classList.add("artiste-div-active");
 
     artisteSelect(document.querySelector(`.artistes .artiste:nth-of-type(${nbArtiste})`));
+
 
     const artistes= document.querySelectorAll(".artistes .artiste");
     artistes.forEach(function(artiste) {
@@ -68,5 +68,6 @@ function colorSpan(pas) {
         selected = pas;
     }, 1 )
 }
+
 
 

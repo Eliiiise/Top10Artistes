@@ -9,8 +9,10 @@ import ChoosePage from "./components/ChoosePage";
 import Advencement from "./components/Advencement";
 import ScrollHorizontal from "./components/ScrollHorizontal";
 import CreateSpanMusic from "./components/CreateSpanMusic";
+import UpdateMenu from "./components/UpdateMenu";
 
 let artisteSelect = null;
+let artisteId = null
 
 if (document.querySelector(".welcome")) {
     artisteSelect = 1;
@@ -21,11 +23,14 @@ if (artisteSelect == null) {
     window.location.href= "http://127.0.0.1:8000";
 }
 
+document.querySelector('.artiste').style.opacity=0;
+CreateSpanMusic();
 SelectNav();
 ChoosePage();
 ScrollHorizontal();
-CreateSpanMusic();
 Advencement(artisteSelect);
+
+
 
 
 const init = function () {
@@ -33,10 +38,33 @@ const init = function () {
         CreateSpanMusic();
         Advencement(artisteSelect);
         const artistes= document.querySelectorAll(".artistes .artiste");
+
+        artisteId = document.querySelector(`.artistes .artiste:nth-of-type(${artisteSelect})`).getAttribute("data-id");
+        $.ajax({
+            url: `/artist`,
+            data : 'id='+artisteId,
+            dataType: 'json',
+            type: 'GET',
+        }).done(function(response) {
+            console.log("test1");
+            UpdateMenu(response);
+        });
+
         artistes.forEach(function(artiste) {
 
             artiste.addEventListener('click', function (e) {
+                document.querySelector('.artiste').style.opacity=0;
                 artisteSelect = artiste.className.substring(10,11);
+                artisteId = artiste.getAttribute("data-id");
+                $.ajax({
+                    url: `/artist`,
+                    data : 'id='+artisteId,
+                    dataType: 'json',
+                    type: 'GET',
+                }).done(function(response) {
+                    console.log("test1");
+                    UpdateMenu(response);
+                });
             });
         });
     }
@@ -48,6 +76,8 @@ init();
 
 swup.on('contentReplaced', init);
 //swup.on('willReplaceContent', unInit);
+
+
 
 
 

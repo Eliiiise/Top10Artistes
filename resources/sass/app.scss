@@ -21,8 +21,10 @@
 'components/artiste',
 'components/select-nav',
 'components/advancement',
+'components/album',
 'components/info';
 
 // 6. Page-specific styles
 @import
-'pages/welcome';
+'pages/welcome',
+'pages/albums';

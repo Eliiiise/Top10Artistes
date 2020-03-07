@@ -31291,6 +31291,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Advencement__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Advencement */ "./resources/js/components/Advencement.js");
 /* harmony import */ var _components_ScrollHorizontal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/ScrollHorizontal */ "./resources/js/components/ScrollHorizontal.js");
 /* harmony import */ var _components_CreateSpanMusic__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/CreateSpanMusic */ "./resources/js/components/CreateSpanMusic.js");
+/* harmony import */ var _components_UpdateMenu__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/UpdateMenu */ "./resources/js/components/UpdateMenu.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
@@ -31302,7 +31303,9 @@ var swup = new swup__WEBPACK_IMPORTED_MODULE_1___default.a(); // only this line 
 
 
 
+
 var artisteSelect = null;
+var artisteId = null;
 
 if (document.querySelector(".welcome")) {
   artisteSelect = 1;
@@ -31313,10 +31316,11 @@ if (artisteSelect == null) {
   window.location.href = "http://127.0.0.1:8000";
 }
 
+document.querySelector('.artiste').style.opacity = 0;
+Object(_components_CreateSpanMusic__WEBPACK_IMPORTED_MODULE_6__["default"])();
 Object(_components_SelectNav__WEBPACK_IMPORTED_MODULE_2__["default"])();
 Object(_components_ChoosePage__WEBPACK_IMPORTED_MODULE_3__["default"])();
 Object(_components_ScrollHorizontal__WEBPACK_IMPORTED_MODULE_5__["default"])();
-Object(_components_CreateSpanMusic__WEBPACK_IMPORTED_MODULE_6__["default"])();
 Object(_components_Advencement__WEBPACK_IMPORTED_MODULE_4__["default"])(artisteSelect);
 
 var init = function init() {
@@ -31324,9 +31328,30 @@ var init = function init() {
     Object(_components_CreateSpanMusic__WEBPACK_IMPORTED_MODULE_6__["default"])();
     Object(_components_Advencement__WEBPACK_IMPORTED_MODULE_4__["default"])(artisteSelect);
     var artistes = document.querySelectorAll(".artistes .artiste");
+    artisteId = document.querySelector(".artistes .artiste:nth-of-type(".concat(artisteSelect, ")")).getAttribute("data-id");
+    jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax({
+      url: "/artist",
+      data: 'id=' + artisteId,
+      dataType: 'json',
+      type: 'GET'
+    }).done(function (response) {
+      console.log("test1");
+      Object(_components_UpdateMenu__WEBPACK_IMPORTED_MODULE_7__["default"])(response);
+    });
     artistes.forEach(function (artiste) {
       artiste.addEventListener('click', function (e) {
+        document.querySelector('.artiste').style.opacity = 0;
         artisteSelect = artiste.className.substring(10, 11);
+        artisteId = artiste.getAttribute("data-id");
+        jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax({
+          url: "/artist",
+          data: 'id=' + artisteId,
+          dataType: 'json',
+          type: 'GET'
+        }).done(function (response) {
+          console.log("test1");
+          Object(_components_UpdateMenu__WEBPACK_IMPORTED_MODULE_7__["default"])(response);
+        });
       });
     });
   }
@@ -31381,10 +31406,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Advencement; });
 var max = 300;
 var ecart = 30;
-var selected = 0;
+var selected = 1;
 function Advencement(nbArtiste) {
-  selected = 0;
-  setTimeout(colorSpan(10), 100);
+  selected = 1;
   document.querySelector(".artistes .artiste:nth-of-type(1)").classList.add("artiste-nb-active");
   document.querySelector(".artistes .artiste:nth-of-type(1) img").classList.add("artiste-img-active");
   document.querySelector(".artistes .artiste:nth-of-type(1) div").classList.add("artiste-div-active");
@@ -31622,6 +31646,30 @@ function SelectNav() {
       }
     });
   });
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/UpdateMenu.js":
+/*!***********************************************!*\
+  !*** ./resources/js/components/UpdateMenu.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return updateMenu; });
+function updateMenu(artisteData) {
+  document.querySelector('.artiste div').innerHTML = "<img src=".concat(artisteData.picture_medium, ">");
+  document.querySelector('.artiste p.artiste-name').innerHTML = artisteData.name;
+  document.querySelector('.artiste p.artiste-type').innerHTML = artisteData.type;
+  setTimeout(function () {
+    document.querySelector('.artiste').style.opacity = 1;
+  }, 100);
+  document.querySelector('.page1').href = "/albums?id=".concat(artisteData.id);
+  document.querySelector('.page2').href = "/collaborations?id=".concat(artisteData.id);
+  document.querySelector('.page3').href = "/communaute?id=".concat(artisteData.id);
 }
 
 /***/ }),

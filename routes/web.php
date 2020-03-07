@@ -19,7 +19,7 @@ Route::get('/contact', function () {
 
 Route::get('/', 'Top10Controller@guetTop10');
 
-Route::get('/albums', 'AlbumsController@open');
+Route::get('/albums', 'AlbumsController@guetAlbums');
 
 Route::get('/collaborations', function () {
     return view('/collaborations');
@@ -37,3 +37,7 @@ Route::get('/test/{id}', function($id) {            //passage du paramètre id
     echo('Test ');
     echo($id);
 });
+
+
+
+Route::get('/artist', 'ArtisteController@index');

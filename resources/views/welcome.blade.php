@@ -25,7 +25,7 @@
         </section>
         <section class="artistes">
             @foreach($artistes as $artiste)
-                <div class="artiste nb{{$artiste->position}}">
+                <div data-id="{{ $artiste->id }}" class="artiste nb{{$artiste->position}}">
                     <div>
                     <img src="{{$artiste->picture_medium}}">
                     </div>
