@@ -12,30 +12,29 @@
 */
 
 
-
-Route::get('/contact', function () {
-    return view('contact');
-});
-
 Route::get('/', 'Top10Controller@guetTop10');
 
 Route::get('/albums', 'AlbumsController@guetAlbums');
 
 Route::get('/collaborations', 'collaborationsController@guetCollaborations');
 
-Route::get('/communaute', function () {
-    return view('/communaute');
-});
+Route::get('/communaute', 'communauteController@guetComments');
+
+Route::get('/artist', 'ArtisteController@index');
+
+
 
 Route::post('/response','ContactController@send');
 
 Route::get('/contact','ContactController@index');
+
+
 
 Route::get('/test/{id}', function($id) {            //passage du paramètre id
     echo('Test ');
     echo($id);
 });
 
-
-
-Route::get('/artist', 'ArtisteController@index');
+Route::get('/contact', function () {
+    return view('contact');
+});

@@ -1,0 +1,44 @@
+.communaute {
+
+    margin: 100px 0;
+
+    .user {
+        display: flex;
+        margin: 50px 0;
+
+        .artiste {
+            width: 30%;
+
+            div {
+                background-color: rgba(0,0,0,0);
+            }
+        }
+
+        .comment {
+            width: 50%;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: $middle-blue;
+            border-radius: 10px;
+
+            p {
+                color: $light-blue;
+
+                word-break: break-word;
+
+                -webkit-hyphens: auto;
+
+                -moz-hyphens: auto;
+
+                -ms-hyphens: auto;
+
+                -o-hyphens: auto;
+
+                hyphens: auto;
+
+            }
+        }
+    }
+}

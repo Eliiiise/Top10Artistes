@@ -568,3 +568,39 @@ html.is-animating .transition-fade {
   background-color: rgba(0, 0, 0, 0);
 }
 
+.communaute {
+  margin: 100px 0;
+}
+
+.communaute .user {
+  display: flex;
+  margin: 50px 0;
+}
+
+.communaute .user .artiste {
+  width: 30%;
+}
+
+.communaute .user .artiste div {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.communaute .user .comment {
+  width: 50%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #192043;
+  border-radius: 10px;
+}
+
+.communaute .user .comment p {
+  color: #C5CDF1;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  -o-hyphens: auto;
+  hyphens: auto;
+}
+
