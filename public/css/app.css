@@ -429,6 +429,22 @@ html.is-animating .transition-fade {
   margin-left: 50px;
 }
 
+.albums .album .cercle {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.albums .album img {
+  transition: all 0.5s;
+}
+
+.albums .album > div {
+  background-color: #FF4632;
+  height: 250px;
+  transition: all 0.5s;
+  position: relative;
+}
+
 .albums .album .album-title {
   font-size: 18px;
   font-weight: 600;
@@ -446,24 +462,23 @@ html.is-animating .transition-fade {
   transition: all 0.5s;
 }
 
-.wrapper-albums {
-  display: flex;
-  flex-direction: row;
-  transform: rotate(90deg) translateY(-60vh);
-  transform-origin: top left;
-  display: flex;
-  flex-direction: column;
-  padding: 0 100px;
+.album-cliked img {
+  opacity: 0.5;
 }
 
-.outer-wrapper-albums {
-  width: 100vw;
-  height: calc(100vw - 300px);
-  transform: rotate(-90deg) translate(-61vh, -100px);
-  transform-origin: top left;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  position: absolute;
+.album-cliked > div {
+  box-shadow: 0px 0px 8px #FF4632;
+}
+
+.album-cliked .album-title,
+.album-cliked .type {
+  color: #FF4632 !important;
+  text-shadow: 0px 0px 4px #FF4632;
+}
+
+.album-cliked .cercle {
+  opacity: 1 !important;
+  pointer-events: auto !important;
 }
 
 .info {
@@ -481,6 +496,38 @@ html.is-animating .transition-fade {
 
 .info p em {
   font-weight: 600;
+}
+
+.cercle {
+  background-color: #FF4632;
+  width: 60px;
+  height: 60px;
+  top: calc( (250px / 2) - 30px );
+  left: calc( (250px / 2) - 30px );
+  border-radius: 40px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 8px #FF4632;
+  transition: all 0.5s;
+  z-index: 10;
+}
+
+.cercle .arrow-left {
+  width: 20px;
+}
+
+.cercle .arrow-left .play {
+  margin-left: 2px;
+}
+
+.cercle .arrow-left .select {
+  display: block;
+}
+
+.cercle .arrow-left .un-select {
+  display: none;
 }
 
 .artistes {
@@ -545,6 +592,26 @@ html.is-animating .transition-fade {
   font-weight: 400;
   letter-spacing: 2px;
   margin: 10px 20px;
+}
+
+.wrapper-albums {
+  display: flex;
+  flex-direction: row;
+  transform: rotate(90deg) translateY(-60vh);
+  transform-origin: top left;
+  display: flex;
+  flex-direction: column;
+  padding: 0 100px;
+}
+
+.outer-wrapper-albums {
+  width: 100vw;
+  height: calc(100vw - 300px);
+  transform: rotate(-90deg) translate(-61vh, -100px);
+  transform-origin: top left;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: absolute;
 }
 
 .collaborations {

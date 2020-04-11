@@ -22,11 +22,15 @@ Route::get('/communaute', 'communauteController@guetComments');
 
 Route::get('/artist', 'ArtisteController@index');
 
-
+Route::get('/music', 'MusicController@guetMusic');
 
 Route::post('/response','ContactController@send');
 
 Route::get('/contact','ContactController@index');
+
+
+
+Route::get('/cars','CarsController@index')->name('cars');
 
 
 

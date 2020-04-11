@@ -1,5 +1,4 @@
 require('./bootstrap');
-import $ from 'jquery';
 import Swup from 'swup';
 const swup = new Swup(); // only this line when included with script tag
 
@@ -7,12 +6,11 @@ const swup = new Swup(); // only this line when included with script tag
 import SelectNav from "./components/SelectNav";
 import ChoosePage from "./components/ChoosePage";
 import Advencement from "./components/Advencement";
-//import ScrollHorizontal from "./components/ScrollHorizontal";
 import CreateSpanMusic from "./components/CreateSpanMusic";
-import UpdateMenu from "./components/UpdateMenu";
+import Music from "./components/Music";
+import ChooseArtist from "./components/ChooseArtist";
 
 let artisteSelect = null;
-let artisteId = null
 
 if (document.querySelector(".welcome")) {
     artisteSelect = 1;
@@ -30,42 +28,26 @@ Advencement(artisteSelect);
 
 
 
-
 const init = function () {
+
     if (document.querySelector(".advancement")) {
         CreateSpanMusic();
         Advencement(artisteSelect);
+        ChooseArtist(artisteSelect);
+
         const artistes= document.querySelectorAll(".artistes .artiste");
-
-        artisteId = document.querySelector(`.artistes .artiste:nth-of-type(${artisteSelect})`).getAttribute("data-id");
-        $.ajax({
-            url: `/artist`,
-            data : 'id='+artisteId,
-            dataType: 'json',
-            type: 'GET',
-        }).done(function(response) {
-            console.log("test1");
-            UpdateMenu(response);
-        });
-
         artistes.forEach(function(artiste) {
-
             artiste.addEventListener('click', function (e) {
-                document.querySelector('.artiste').style.opacity=0;
                 artisteSelect = artiste.className.substring(10,11);
-                artisteId = artiste.getAttribute("data-id");
-                $.ajax({
-                    url: `/artist`,
-                    data : 'id='+artisteId,
-                    dataType: 'json',
-                    type: 'GET',
-                }).done(function(response) {
-                    console.log("test1");
-                    UpdateMenu(response);
-                });
             });
         });
+
     }
+
+    if (document.querySelector(".albums")) {
+        Music();
+    }
+
 }
 
 init();

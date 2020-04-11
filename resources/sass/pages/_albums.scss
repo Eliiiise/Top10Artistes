@@ -1,0 +1,21 @@
+
+.wrapper-albums {
+    display: flex;
+    flex-direction: row;
+    transform: rotate(90deg) translateY(-60vh);
+    transform-origin: top left;
+    display: flex;
+    flex-direction: column;
+    padding: 0 100px;
+
+}
+
+.outer-wrapper-albums {
+    width: 100vw;
+    height: calc(100vw - 300px);
+    transform: rotate(-90deg) translate(-61vh, -100px);
+    transform-origin: top left;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: absolute;
+}

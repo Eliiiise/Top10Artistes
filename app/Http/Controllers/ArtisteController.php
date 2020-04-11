@@ -8,8 +8,6 @@ class ArtisteController extends Controller
 {
     public function index(Request $request) {
         $id = $request->input('id');
-        //dd($id);
-
 
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_FOLLOWLOCATION, TRUE);
@@ -37,12 +35,7 @@ class ArtisteController extends Controller
         } else {
             //$newResponse = json_decode($response);
 
-            echo($response);
+            echo ($response);
         }
-
-
-        //dd($newResponse);
-
-
     }
 }

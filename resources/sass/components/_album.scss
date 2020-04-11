@@ -22,6 +22,22 @@
         text-align: center;
         margin-left: 50px;
 
+        .cercle {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        img {
+            transition: all 0.5s;
+        }
+
+        >div {
+            background-color: $red;
+            height: 250px;
+            transition: all 0.5s;
+            position: relative;
+        }
+
         .album-title {
             font-size: 18px;
             font-weight: $text-semi-bold;
@@ -41,23 +57,24 @@
     }
 }
 
-.wrapper-albums {
-    display: flex;
-    flex-direction: row;
-    transform: rotate(90deg) translateY(-60vh);
-    transform-origin: top left;
-    display: flex;
-    flex-direction: column;
-    padding: 0 100px;
 
-}
+.album-cliked {
+    img {
+        opacity: 0.5;
+    }
 
-.outer-wrapper-albums {
-    width: 100vw;
-    height: calc(100vw - 300px);
-    transform: rotate(-90deg) translate(-61vh, -100px);
-    transform-origin: top left;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    position: absolute;
+    >div {
+        box-shadow: $big-shadow;
+    }
+
+    .album-title, .type {
+        color: $red !important;
+        text-shadow: $shadow;
+    }
+
+    .cercle {
+        opacity: 1 !important;
+        pointer-events: auto !important;
+    }
+
 }

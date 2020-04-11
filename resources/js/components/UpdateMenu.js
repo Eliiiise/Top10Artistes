@@ -1,5 +1,4 @@
 
-
 export default function updateMenu(artisteData) {
     document.querySelector('.artiste div').innerHTML = `<img src=${artisteData.picture_medium}>`
     document.querySelector('.artiste p.artiste-name').innerHTML = artisteData.name;

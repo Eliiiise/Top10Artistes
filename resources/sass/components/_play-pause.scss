@@ -1,0 +1,37 @@
+
+.cercle {
+
+    background-color: $red;
+    width: 60px;
+    height: 60px;
+    top: calc( (250px / 2) - 30px );
+    left: calc( (250px / 2) - 30px );
+    border-radius: 40px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: $big-shadow;
+    transition: all 0.5s;
+    z-index: 10;
+
+    .arrow-left {
+        width: 20px;
+
+        .pause {
+
+        }
+
+        .play {
+            margin-left: 2px;
+        }
+
+        .select {
+            display: block;
+        }
+
+        .un-select {
+            display: none;
+        }
+    }
+}
